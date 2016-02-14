@@ -195,3 +195,45 @@ function wordsToCurrency(input,currency){
     return temp;
   }
 }
+
+/******
+  
+  Accepts three arguments:
+  the first is the number from zero to 1 miliion,
+  the second is the delimiter to be used (single character only)
+  and third, the number of jumps when the delimiter will appear (from right most going to left most digit)
+
+*******/
+function numberDelimited(input,delimiter,jump){
+
+  var output = "";
+  var n; //length of the array/input
+  var i;  //counter to loop from rightmost to leftmost of the input
+  var valid = true; //boolean to determine whether the inputs are valid/within constraints
+
+  //this condition is necessary to avoid pointlessly going into the loop to do nothing(0 jumps)
+  if(jump == 0){ //if jump == 0, output is just equal to the input
+    return input;
+  }
+
+  else{
+    if(delimiter.length != 1){   //condition to comply with the specifications; 
+      valid = false;
+    }
+    if(valid == true){  //proceed if valid
+      n = input.length;
+      n = n - jump; //to determine the index where the first delimiter will appear
+      input = input.split("");  //converts input into an array
+      while(n > 0){
+        input.splice(n,0,delimiter) //use the delimiter every "jump" index
+        n = n - jump; //index of the next delimiter
+      }
+      output = input.join("");
+      document.write(output);
+      return output;
+    }
+    else{ //return error if invalid
+      return "Invalid inputs";
+    }//end of else loop
+  }//end of else loop
+}//end of numberDelimited() function
