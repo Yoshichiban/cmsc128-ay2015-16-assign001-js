@@ -1,5 +1,13 @@
+/******
+ * Joshua David C. Sta. Rita
+ * 2010-42658
+ * CMSC 128 AB-4L
+ * Assignment #01 : JavaScript
 /*******
 
+  Accepts a whole number from zero (0) to 1 million (1000000; without commas for example: 1,000,000)
+  and prints on screen the number in word form
+  
   Converts input number to its equivalent word form
   
 *******/
@@ -76,7 +84,7 @@ function numToWords(input){
     n = n-3;  //move pointer to the next set of 3 numbers
   }
   document.write(output);
-}
+}//end of numToWords() function
 
 /*******
 
@@ -130,7 +138,7 @@ function wordsToNum(input){
   }
   temp = eval(temp);  //evaluate the string expression to get the number converted from the input strings
   return temp;
-}
+}//end of wordsToNum() function
 
 /*******
 
@@ -194,7 +202,7 @@ function wordsToCurrency(input,currency){
     temp = temp.concat(" *** invalid currency");
     return temp;
   }
-}
+}//end of wordsToCurrency() function
 
 /******
   
