@@ -237,7 +237,6 @@ function numberDelimited(input,delimiter,jump){
         n = n - jump; //index of the next delimiter
       }
       output = input.join("");
-      document.write(output);
       return output;
     }
     else{ //return error if invalid
